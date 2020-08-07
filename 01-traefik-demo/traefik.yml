@@ -1,0 +1,14 @@
+version: "3"
+services:
+  traefik:
+    image: "traefik:v2.2"
+    command:
+      - --entrypoints.web.address=:80
+      - --entrypoints.web-secure.address=:443 #Declares the web-secure entrypoint in Traefik
+      - --providers.docker=true
+      - --api.insecure
+    ports:
+      - "8000:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"

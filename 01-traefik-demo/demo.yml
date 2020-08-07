@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  my-app:
+    image: containous/whoami:v1.3.0
+    labels:
+      - traefik.http.routers.my-app.rule=Host(`faria.lvh.me`)
