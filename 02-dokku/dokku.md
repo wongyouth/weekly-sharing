@@ -38,7 +38,8 @@ http://dokku.viewdocs.io/dokku/
     --volume /var/run/docker.sock:/var/run/docker.sock \
     dokku/dokku:0.21.4
 
----
+
+<!-- ---
 
 ## setup ssh config
 
@@ -48,6 +49,8 @@ Add ssh config for dokku.em to your ~/.ssh/config
       Hostname 127.0.0.1
       User root
       Port 3022
+
+-->
 
 ---
 
@@ -97,6 +100,18 @@ and the repository exists.
     cat ~/.ssh/id_rsa.pub | docker exec -i dokku dokku ssh-keys:add ryan
 
 
+---
+
+## SSL - Let's Encrypt
+
+    dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
+
+    dokku config:set --no-restart myapp DOKKU_LETSENCRYPT_EMAIL=your@email.tld
+
+    dokku letsencrypt myapp
+    dokku letsencrypt:auto-renew myapp
+
+https://github.com/dokku/dokku-letsencrypt
 
 ---
 
