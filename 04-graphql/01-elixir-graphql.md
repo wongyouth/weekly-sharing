@@ -121,3 +121,8 @@ SELECT p0."id", p0."name", p0."content", p0."channel_id", p0."inserted_at", p0."
 ```
 
 ---
+
+### References
+
+- graphql <https://graphql.org/>
+- ansinthe <https://hexdocs.pm/absinthe>
