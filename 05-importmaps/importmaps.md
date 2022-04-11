@@ -224,8 +224,20 @@ Support multiple versions of the same package
 
 ## Preload
 
+https://developer.chrome.com/blog/modulepreload/
+
 ```
-<link rel="modulepreload" href="import:lodash">
+<link rel="modulepreload" href="vendor.js">
 ```
 
+---
+
+# References:
+
+- https://github.com/WICG/import-maps
+- https://developer.chrome.com/blog/modulepreload/
+- https://github.com/rails/importmap-rails
+- https://www.jianshu.com/p/b23d823a183a
+
+---
 # The End
