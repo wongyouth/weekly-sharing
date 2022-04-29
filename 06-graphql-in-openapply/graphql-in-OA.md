@@ -64,19 +64,40 @@ input AddParentInput { ... }
 input AddStudentInput { ... }
 ```
 
+----
+
+![](./queries.png)
+
 ---
 
 # Key features of GraphQL
 
 ----
+<!-- .slide: data-auto-animate -->
 
-## Performance
+## Performance 1
 
-Prevents over-fetching: In traditional approaches like REST, you often end up over-fetching — asking for more data than you need.
+<p class="fragment fade-up">
+Prevents over-fetching
+</p>
+<p class="fragment fade-up">
+In traditional approaches like REST, you often end up over-fetching — asking for more data than you need.
+</p>
+----
+<!-- .slide: data-auto-animate -->
+
+## Performance 1
+
+Prevents over-fetching
 
 With GraphQL, you can ask for exactly what you need. The benefit is reduced bandwidth, which may be especially important on mobile and low-energy devices.
 
+
 ----
+<!-- .slide: data-auto-animate -->
+## Performance 1
+
+Prevents over-fetching
 
 ```
 Query {
@@ -87,6 +108,10 @@ Query {
 ```
 
 ----
+<!-- .slide: data-auto-animate -->
+## Performance 1
+
+Prevents over-fetching
 
 ```
 Query {
@@ -102,13 +127,40 @@ Note:
 mobilePhone need another DB query
 uncompletedItemsCount is a time cost sync process
 
----
+----
+<!-- .slide: data-auto-animate -->
 
-## Performance
+## Performance 2
 
-Prevents under-fetching (multiple round-trips): The other end of the fetching problem in REST is not getting all the data you need in a single round-trip. Consider fetching your friends list in a social media app and needing to batch individual queries to get each friend’s profile picture. GraphQL helps solve this problem.
+<p class="fragment fade-up">
+Prevents under-fetching (multiple round-trips)
+</p>
 
 ----
+<!-- .slide: data-auto-animate -->
+## Performance 2
+Prevents under-fetching (multiple round-trips)
+
+The other end of the fetching problem in REST is not getting all the data you need in a single round-trip.
+
+----
+<!-- .slide: data-auto-animate -->
+## Performance 2
+Prevents under-fetching (multiple round-trips)
+
+Consider fetching your friends list in a social media app and needing to batch individual queries to get each friend’s profile picture.
+
+----
+<!-- .slide: data-auto-animate -->
+## Performance 2
+Prevents under-fetching (multiple round-trips)
+
+GraphQL helps solve this problem.
+
+----
+<!-- .slide: data-auto-animate -->
+## Performance 2
+Prevents under-fetching (multiple round-trips)
 
 ```
 query {
@@ -119,6 +171,9 @@ query {
 ```
 
 ----
+<!-- .slide: data-auto-animate -->
+## Performance 2
+Prevents under-fetching (multiple round-trips)
 
 ```
 query {
@@ -139,40 +194,109 @@ query {
 ## Architecture
 
 ----
+<!-- .slide: data-auto-animate -->
 
-Decouples the client from the server: UI developers don’t need to wait for backend teams to build an API first. A GraphQL schema acts as a contract for front-end app devs to start building (by mocking out the API calls) and leaves backend teams to deliver on the contract by building the underlying services that serves the graph.
+- Decouples the client from the server
+
+UI developers don’t need to wait for backend teams to build an API first.
+
+----
+<!-- .slide: data-auto-animate -->
+
+- Decouples the client from the server
+
+A GraphQL schema acts as a contract for front-end app devs to start building (by mocking out the API calls) and leaves backend teams to deliver on the contract by building the underlying services that serves the graph.
 
 ----
 
-Single source of truth: UI developers only need to know about to a single endpoint to access the entirety of the data behind a company’s graph.
+- Single source of truth
+
+UI developers only need to know about to a single endpoint to access the entirety of the data behind a company’s graph.
 
 ----
+<!-- .slide: data-auto-animate -->
 
-Scalable with Federation: GraphQL fits nicely into a microservice architecture using an approach called Federation. Federation enables backend teams to maintain their own sub-graphs and compose them into a single graph for an entire organization.
+- Scalable with Federation
+
+GraphQL fits nicely into a microservice architecture using an approach called Federation.
 
 ----
+<!-- .slide: data-auto-animate -->
+
+- Scalable with Federation
+
+Federation enables backend teams to maintain their own sub-graphs and compose them into a single graph for an entire organization.
+
+----
+<!-- .slide: data-auto-animate -->
+
+- Scalable with Federation
 
 ![](./federation.png)
 
 ----
+<!-- .slide: data-auto-animate -->
 
-Introspection: This key feature lets you ask the GraphQL system what types of queries it supports. Introspection provides the framework for all kinds of great tooling. There exist tools to auto-generate API docs and TypeScript types for your resolvers and queries.
+- Introspection
+
+This key feature lets you ask the GraphQL system what types of queries it supports.
+
+
+----
+<!-- .slide: data-auto-animate -->
+
+- Introspection
+
+
+Introspection provides the framework for all kinds of great tooling.
+There exist tools to auto-generate API docs and TypeScript types for your resolvers and queries.
+
+----
+<!-- .slide: data-auto-animate -->
+
+- Introspection
+
+Generate swift code from schema
+
+https://www.apollographql.com/docs/ios/tutorial/tutorial-obtain-schema
+
+----
+<!-- .slide: data-auto-animate -->
+
+- Introspection
+
+Typescript codegen
+
+https://www.apollographql.com/blog/tooling/apollo-codegen/typescript-graphql-code-generator-generate-graphql-types/
 
 ---
+<!-- .slide: data-auto-animate -->
 
 ## Developer experience
 
 ----
+<!-- .slide: data-auto-animate -->
+## Developer experience
 
-Hierarchical & declarative: GraphQL data is inherently graphical and declarative. This makes your queries easier to understand and your data easier to work with. By nesting, we can ask for related data, keeping queries cohesive, and spending zero time stitching together multiple responses like we sometimes have to do with REST.
+- Hierarchical & declarative
+
+GraphQL data is inherently graphical and declarative. This makes your queries easier to understand and your data easier to work with. By nesting, we can ask for related data, keeping queries cohesive, and spending zero time stitching together multiple responses like we sometimes have to do with REST.
 
 ----
+<!-- .slide: data-auto-animate -->
+## Developer experience
 
-Strongly typed (stable API): GraphQL is strongly typed. This means a more stable API with fewer bugs in development and introduces the possibility of more intelligent tooling.
+- Strongly typed (stable API)
+
+GraphQL is strongly typed. This means a more stable API with fewer bugs in development and introduces the possibility of more intelligent tooling.
 
 ----
+<!-- .slide: data-auto-animate -->
+## Developer experience
 
-GraphQL versioning: GraphQL favors the notion of a single, incrementally developed graph. You can give deprecation hints when you add, remove, and change fields on your existing graph. Compare this to the coarse-grained approach to versioning in a REST context with version numbers across an entire API.
+- GraphQL versioning
+
+GraphQL favors the notion of a single, incrementally developed graph. You can give deprecation hints when you add, remove, and change fields on your existing graph. Compare this to the coarse-grained approach to versioning in a REST context with version numbers across an entire API.
 
 
 ---
@@ -281,25 +405,30 @@ https://faria.devel-01.openapply.cn/graphiql
 
 ----
 
+### generate graphql object
+
 ```
 bin/rails g graphql:object parent
 ```
 
+----
+
+Fields from DB
+
 ![](./parent-type.png)
 
 
+----
+
 ## Custom fields
 
-fields not in DB
+Fields not in DB
 
 ![](./custom-fields.png)
 
 ---
 
-### parent object based fields
-
-
-![](./role-name.png)
+## relation between objects
 
 ----
 
@@ -308,6 +437,19 @@ fields not in DB
 ----
 
 ![](./family.png)
+
+
+----
+
+### extras: parent
+
+parent is the upper layer student object
+
+![](./custom-fields.png)
+
+----
+
+![](./role-name.png)
 
 ----
 
@@ -323,11 +465,17 @@ Query myStudents {
 
 ```
 
+----
+
+![](./student-query.png)
+
 ---
 
 ### global id
 
-![](./student-query.png)
+----
+
+![](./global-id-in-spec.png)
 
 ----
 
@@ -350,6 +498,8 @@ Query myStudents {
 ----
 
 ![](./locale-enum.png)
+
+only allow 0-9, a-z, A-Z, and underscore for enum
 
 Note:
 can only use alpha letters:
@@ -417,6 +567,10 @@ https://relay.dev/graphql/connections.htm
 
 ----
 
+## an issue about connection
+
+----
+
 ![](./connections-issue-not-stable.png)
 
 ----
@@ -427,18 +581,25 @@ https://relay.dev/graphql/connections.htm
 
 graphql-ruby has stable connections in pro version
 
+
+----
+
 ![](./graphql-ruby-connections.png)
 
 ----
 
-
-#### Cursor-based Stable connections
+## find a opensource replcement
 
 https://github.com/bibendi/graphql-connections
+
+----
+
 
 ![](./stable-connections-repo.png)
 
 ----
+
+#### id-based Stable connections
 
 ![](./stable-connections-in-code.png)
 
@@ -468,14 +629,22 @@ Steps:
 ![](./create-attachment-response.png)
 
 ----
+<!-- .slide: data-auto-animate -->
 
 #### Problems
 
-Avatar images need to generate some resize versions at OA servers.
+Resized versions of avatar need to be generated at OA servers.
+
+----
+<!-- .slide: data-auto-animate -->
+
+#### Problems
+
+Resized versions of avatar need to be generated at OA servers.
 
 Solution:
 
-Still use the old RESTful way to upload avatar files
+Use the old RESTful way to upload avatar files
 
 ---
 
@@ -483,10 +652,12 @@ Still use the old RESTful way to upload avatar files
 
 ----
 
-# types
+# action types
 
-- unauthorized error
-- other error
+When an error occurs
+
+- go to login page
+- show an error toast at the same page
 
 ----
 
@@ -512,7 +683,20 @@ Client should stay in the same page and show a toast for the error.
 
 ----
 
+A GraphQL spec structure
+
+- set query
+- set variables
+- post graphql request
+- test the result
+
+----
+
 ![](./test-messages.png)
+
+----
+
+GraphQL Macros
 
 ----
 
@@ -520,11 +704,28 @@ Client should stay in the same page and show a toast for the error.
 
 ----
 
-## matcher
+## RSpec Matcher
+
+----
 
 
 ![](./graphql-matcher.png)
 
+----
+
+- expect not to get an error
+
+```
+post_graphql
+expect(response).to not_have_graphql_error
+```
+
+- expect to get an error
+
+```
+post_graphql
+expect(response).to have_graphql_error "Invalid Token"
+```
 
 ---
 
